@@ -76,4 +76,9 @@ defmodule SlateWeb.Router do
     post "/users/confirm", ConfirmationController, :create
     get "/users/confirm/:token", ConfirmationController, :confirm
   end
+
+  # Bamboo local email
+  if Mix.env() == :dev do
+    forward "/sent_emails", Bamboo.SentEmailViewerPlug
+  end
 end
