@@ -46,3 +46,11 @@ jobs:
       - run: bin/setup
       - run: bin/lint
       - run: bin/test
+  staging:
+    - name: Deploy Staging
+    push:
+      branches:
+        - develop
+    uses: joelwmale/webhook-action@master
+    env:
+      WEBHOOK_URL: ${{ secrets.STAGING_WEBHOOK_URL }}
