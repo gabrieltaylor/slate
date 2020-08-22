@@ -4,7 +4,7 @@ defmodule Slate.MixProject do
   def project do
     [
       app: :slate,
-      version: "0.1.2",
+      version: "0.1.3",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -38,7 +38,10 @@ defmodule Slate.MixProject do
       {:phoenix_live_dashboard, "~> 0.2"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
+
+      # Plugs
       {:plug_cowboy, "~> 2.0"},
+      {:plug_heartbeat, "~> 1.0"},
 
       # Database
       {:ecto_sql, "~> 3.4"},
@@ -50,6 +53,9 @@ defmodule Slate.MixProject do
 
       # Mailing
       {:bamboo, "~> 1.5"},
+
+      # Background Work
+      {:oban, "~> 2.1"},
 
       # Telemetry
       {:telemetry_metrics, "~> 0.4"},

@@ -20,4 +20,9 @@ config :slate, Slate.Mailer,
   adapter: Bamboo.LocalAdapter,
   open_email_in_browser_url: "http://localhost:4000/sent_emails"
 
+config :slate, Oban,
+  repo: Slate.Repo,
+  plugins: [Oban.Plugins.Pruner],
+  queues: [default: 5]
+
 import_config "#{Mix.env()}.exs"

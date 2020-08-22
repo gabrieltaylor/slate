@@ -2,11 +2,32 @@
 
 ## [Unreleased](https://github.com/devato/slate/tree/HEAD)
 
-[Full Changelog](https://github.com/devato/slate/compare/ba194d110b173567a86cba472949c47d4ba0248d...HEAD)
+[Full Changelog](https://github.com/devato/slate/compare/0.1.2...HEAD)
+
+**Closed issues:**
+
+- Add basicauth plugs [\#6](https://github.com/devato/slate/issues/6)
+- Add healthcheck plugs [\#5](https://github.com/devato/slate/issues/5)
+- Add Oban [\#1](https://github.com/devato/slate/issues/1)
+
+## [0.1.2](https://github.com/devato/slate/tree/0.1.2) (2020-08-22)
+
+[Full Changelog](https://github.com/devato/slate/compare/0.1.1...0.1.2)
+
+## [0.1.1](https://github.com/devato/slate/tree/0.1.1) (2020-08-22)
+
+[Full Changelog](https://github.com/devato/slate/compare/v0.1.1...0.1.1)
 
 **Closed issues:**
 
 - Add render.com yml [\#4](https://github.com/devato/slate/issues/4)
+
+## [v0.1.1](https://github.com/devato/slate/tree/v0.1.1) (2020-08-22)
+
+[Full Changelog](https://github.com/devato/slate/compare/ba194d110b173567a86cba472949c47d4ba0248d...v0.1.1)
+
+**Closed issues:**
+
 - Add JS linting [\#3](https://github.com/devato/slate/issues/3)
 - Add user auth [\#2](https://github.com/devato/slate/issues/2)
 

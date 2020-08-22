@@ -25,3 +25,7 @@ config :slate, SlateWeb.Endpoint,
   ],
   secret_key_base: secret_key_base,
   server: true
+
+# Optional: BasicAuth configuration
+# https://devato.com/post/add-basic-auth-to-phoenix-with-environment-variables
+# config :slate, SlateWeb.BasicAuth, username: "xxx", password: "xxx"
