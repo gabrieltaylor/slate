@@ -10,3 +10,5 @@ npm run deploy --prefix ./assets
 mix phx.digest
 
 MIX_ENV=prod mix release --overwrite
+
+_build/prod/rel/slate/bin/slate eval "Slate.Release.migrate"
