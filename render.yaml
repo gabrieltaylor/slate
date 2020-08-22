@@ -1,3 +1,6 @@
+# Only necessary if you plan on deploying to render.com
+# Feel free to delete otherwise.
+#
 services:
   - type: web
     name: slate-staging                                 # <-- update

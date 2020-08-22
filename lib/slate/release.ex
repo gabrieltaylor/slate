@@ -1,4 +1,4 @@
-defmodule State.Release do
+defmodule Slate.Release do
   @moduledoc """
   Responsible for custom release commands
   """

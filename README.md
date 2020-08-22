@@ -1,3 +1,14 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+- [Slate](#slate)
+  - [Getting Started](#getting-started)
+  - [Helper Scripts](#helper-scripts)
+  - [Template Details](#template-details)
+  - [Deploy to Render.com](#deploy-to-rendercom)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Slate
 
 An Opinionated Elixir Phoenix App Template.
