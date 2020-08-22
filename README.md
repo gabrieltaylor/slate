@@ -42,6 +42,10 @@ TODO
 
 ## Deploy to Render.com
 
+First determine which branch you'd like to use for `staging` / `prod`.
+
+Then follow these steps:
+
 1. Make changes to `render.yaml` as needed.
 2. `mix phx.gen.secret` and copy the key
 3. Visit render.com, and go to YAML in the navigation.

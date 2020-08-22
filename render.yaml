@@ -17,17 +17,31 @@ services:
         name: slate-staging
         property: connectionString
 
+  # NOTE: Uncomment to create prod resources
+  # - type: web
+  #   name: slate-prod
+  #   env: elixir
+  #   repo: https://github.com/devato/slate.git
+  #   region: oregon
+  #   plan: starter
+  #   branch: master
+  #   buildCommand: ./rel/render-build.sh
+  #   startCommand: _build/prod/rel/slate/bin/slate start
+  #   healthCheckPath: /
+  #   envVars:
+  #   - key: SECRET_KEY_BASE
+  #     sync: false
+  #   - key: DATABASE_URL
+  #     fromDatabase:
+  #       name: slate-prod
+  #       property: connectionString
+
 databases:
   - name: slate-staging
     databaseName: slate_staging
     user: slate
 
-# envVarGroups:
-#   - name: slate-settings
-#     envVars:
-#     - key: CONCURRENCY
-#       value: 2
-#     - key: SECRET
-#       generateValue: true
-#     - key: USER_PROVIDED_SECRET
-#       sync: false
+  # NOTE: Uncomment to create prod resources
+  # - name: slate-prod
+  #   databaseName: slate_prod
+  #   user: slate
