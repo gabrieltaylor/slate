@@ -15,18 +15,6 @@ defmodule Slate.AccountsFactory do
       def unique_user_email, do: Faker.Internet.free_email()
       def valid_user_password, do: "123123"
 
-      def user_fixture(attrs \\ %{}) do
-        {:ok, user} =
-          attrs
-          |> Enum.into(%{
-            email: unique_user_email(),
-            password: valid_user_password()
-          })
-          |> Slate.Accounts.register_user()
-
-        user
-      end
-
       def extract_user_token(fun) do
         {:ok, captured} = fun.(&"[TOKEN]#{&1}[TOKEN]")
         [_, token, _] = String.split(captured.body, "[TOKEN]")

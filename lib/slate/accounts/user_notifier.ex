@@ -16,10 +16,18 @@ defmodule Slate.Accounts.UserNotifier do
   @type uri_type :: nil | URL.Data.t() | URL.Geo.t() | URL.Tel.t() | URL.UUID.t() | URL.Mailto.t()
 
   @doc """
+  Deliver generated email.
+  """
+  @spec deliver(Bamboo.Email.t()) :: {atom(), map()}
+  def deliver(email) do
+    Mailer.deliver_later(email)
+    {:ok, %{to: email.to, body: email.html_body}}
+  end
+
+  @doc """
   Deliver instructions to confirm account.
   """
-  @spec deliver_confirmation_instructions(User.t(), uri_type()) ::
-          Bamboo.Email.t() | {any, Bamboo.Email.t()}
+  @spec deliver_confirmation_instructions(User.t(), uri_type()) :: {atom(), map()}
   def deliver_confirmation_instructions(user, url) do
     base_email()
     |> to(user.email)
@@ -27,14 +35,13 @@ defmodule Slate.Accounts.UserNotifier do
     |> assign(:user, user)
     |> assign(:url, url)
     |> render(:confirmation_instructions)
-    |> Mailer.deliver_now()
+    |> deliver()
   end
 
   @doc """
   Deliver instructions to reset password account.
   """
-  @spec deliver_reset_password_instructions(User.t(), uri_type()) ::
-          Bamboo.Email.t() | {any, Bamboo.Email.t()}
+  @spec deliver_reset_password_instructions(User.t(), uri_type()) :: {atom(), map()}
   def deliver_reset_password_instructions(user, url) do
     base_email()
     |> to(user.email)
@@ -42,14 +49,13 @@ defmodule Slate.Accounts.UserNotifier do
     |> assign(:user, user)
     |> assign(:url, url)
     |> render(:reset_password_instructions)
-    |> Mailer.deliver_now()
+    |> deliver()
   end
 
   @doc """
   Deliver instructions to update your e-mail.
   """
-  @spec deliver_update_email_instructions(User.t(), uri_type()) ::
-          Bamboo.Email.t() | {any, Bamboo.Email.t()}
+  @spec deliver_update_email_instructions(User.t(), uri_type()) :: {atom(), map()}
   def deliver_update_email_instructions(user, url) do
     base_email()
     |> to(user.email)
@@ -57,7 +63,7 @@ defmodule Slate.Accounts.UserNotifier do
     |> assign(:user, user)
     |> assign(:url, url)
     |> render(:update_email_instructions)
-    |> Mailer.deliver_now()
+    |> deliver()
   end
 
   defp base_email do
