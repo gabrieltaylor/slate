@@ -1,5 +1,5 @@
 defmodule SlateWeb.PageLiveTest do
-  use SlateWeb.ConnCase
+  use SlateWeb.ConnCase, async: true
 
   import Phoenix.LiveViewTest
 

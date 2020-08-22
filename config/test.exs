@@ -1,5 +1,7 @@
 use Mix.Config
 
+config :logger, level: :warn
+
 config :bcrypt_elixir, :log_rounds, 1
 
 config :slate, Slate.Repo,
@@ -15,4 +17,4 @@ config :slate, SlateWeb.Endpoint,
 
 config :slate, Slate.Mailer, adapter: Bamboo.TestAdapter
 
-config :logger, level: :warn
+config :slate, Oban, crontab: false, queues: false, plugins: false
