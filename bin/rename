@@ -39,8 +39,7 @@ paths=$(find . -depth 2 -type d \( \
 
 files=$(find . \( \
   -path "./lib/${snakeCaseBefore}.ex" -or \
-  -path "./lib/${snakeCaseBefore}_web.ex" -or \
-  -path "./lib/release.ex" \
+  -path "./lib/${snakeCaseBefore}_web.ex" \
 \))
 
 echo "PATHS:"
