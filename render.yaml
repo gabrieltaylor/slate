@@ -1,0 +1,32 @@
+services:
+  - type: web-staging
+    name: slate-staging
+    env: elixir
+    repo: https://github.com/devato/slate.git
+    region: oregon
+    plan: starter
+    branch: develop
+    dockerCommand: ./rel/render-build.sh
+    healthCheckPath: /
+    envVars:
+    - key: SECRET_KEY_BASE
+      sync: false
+    - key: DATABASE_URL
+      fromDatabase:
+        name: slate-staging
+        property: connectionString
+
+databases:
+  - name: slate-staging
+    databaseName: slate_staging
+    user: slate
+
+# envVarGroups:
+#   - name: slate-settings
+#     envVars:
+#     - key: CONCURRENCY
+#       value: 2
+#     - key: SECRET
+#       generateValue: true
+#     - key: USER_PROVIDED_SECRET
+#       sync: false
