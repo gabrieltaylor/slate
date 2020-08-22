@@ -61,13 +61,3 @@ Then follow these steps:
 2. `mix phx.gen.secret` and copy the key
 3. Visit render.com, and go to YAML in the navigation.
 4. Enter the secret for staging/prod.
-
-## Versioning
-
-Assuming you have ruby installed:
-
-https://github.com/jcouture/incr
-
-```
-$ gem install incr
-```
