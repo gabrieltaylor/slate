@@ -1,14 +1,15 @@
 services:
   - type: web
-    name: slate-staging
+    name: slate-staging                                 # <-- update
     env: elixir
-    repo: https://github.com/devato/slate.git
+    repo: https://github.com/devato/slate.git           # <-- update
     region: oregon
     plan: starter
-    branch: develop
+    branch: develop                                     # <-- update
     buildCommand: ./rel/render-build.sh
-    startCommand: _build/prod/rel/slate/bin/slate start
+    startCommand: _build/prod/rel/slate/bin/slate start # <-- update
     healthCheckPath: /
+    autoDeploy: false # false so we can deploy from actions
     envVars:
     - key: SECRET_KEY_BASE
       sync: false
