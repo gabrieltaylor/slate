@@ -28,4 +28,4 @@ config :slate, SlateWeb.Endpoint,
 
 # Optional: BasicAuth configuration
 # https://devato.com/post/add-basic-auth-to-phoenix-with-environment-variables
-# config :slate, SlateWeb.BasicAuth, username: "admin", password: "secret"
+# config :slate, SlateWeb.BasicAuth, username: "xxx", password: "xxx"
