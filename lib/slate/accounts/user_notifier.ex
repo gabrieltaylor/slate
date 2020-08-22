@@ -1,17 +1,28 @@
 defmodule Slate.Accounts.UserNotifier do
-  @moduledoc false
-  use Bamboo.Phoenix, view: SlateWeb.EmailView
+  @moduledoc """
+  User email notifications.
+
+  Layout: `email.html`
+  """
+
+  use Bamboo.Phoenix, view: SlateWeb.Users.EmailView
+
+  alias Slate.Accounts.User
   alias Slate.Mailer
 
   @from "team@slate.ws"
   @reply_to "team@slate.ws"
 
+  @type uri_type :: nil | URL.Data.t() | URL.Geo.t() | URL.Tel.t() | URL.UUID.t() | URL.Mailto.t()
+
   @doc """
   Deliver instructions to confirm account.
   """
+  @spec deliver_confirmation_instructions(User.t(), uri_type()) ::
+          Bamboo.Email.t() | {any, Bamboo.Email.t()}
   def deliver_confirmation_instructions(user, url) do
     base_email()
-    |> to(user)
+    |> to(user.email)
     |> subject("Confirm Your Account")
     |> assign(:user, user)
     |> assign(:url, url)
@@ -22,9 +33,11 @@ defmodule Slate.Accounts.UserNotifier do
   @doc """
   Deliver instructions to reset password account.
   """
+  @spec deliver_reset_password_instructions(User.t(), uri_type()) ::
+          Bamboo.Email.t() | {any, Bamboo.Email.t()}
   def deliver_reset_password_instructions(user, url) do
     base_email()
-    |> to(user)
+    |> to(user.email)
     |> subject("Reset Your Password")
     |> assign(:user, user)
     |> assign(:url, url)
@@ -35,9 +48,11 @@ defmodule Slate.Accounts.UserNotifier do
   @doc """
   Deliver instructions to update your e-mail.
   """
+  @spec deliver_update_email_instructions(User.t(), uri_type()) ::
+          Bamboo.Email.t() | {any, Bamboo.Email.t()}
   def deliver_update_email_instructions(user, url) do
     base_email()
-    |> to(user)
+    |> to(user.email)
     |> subject("Confirm Email Address")
     |> assign(:user, user)
     |> assign(:url, url)
