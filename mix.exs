@@ -54,6 +54,9 @@ defmodule Slate.MixProject do
       # Mailing
       {:bamboo, "~> 1.5"},
 
+      # Background Work
+      {:oban, "~> 2.1"},
+
       # Telemetry
       {:telemetry_metrics, "~> 0.4"},
       {:telemetry_poller, "~> 0.4"},
