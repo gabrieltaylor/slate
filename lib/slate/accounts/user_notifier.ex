@@ -1,75 +1,54 @@
 defmodule Slate.Accounts.UserNotifier do
-  @moduledoc """
-  # For simplicity, this module simply logs messages to the terminal.
-  # You should replace it by a proper e-mail or notification tool, such as:
-  #
-  #   * Swoosh - https://hexdocs.pm/swoosh
-  #   * Bamboo - https://hexdocs.pm/bamboo
-  #
-  """
-  defp deliver(to, body) do
-    require Logger
-    Logger.debug(body)
-    {:ok, %{to: to, body: body}}
-  end
+  @moduledoc false
+  use Bamboo.Phoenix, view: SlateWeb.EmailView
+  alias Slate.Mailer
+
+  @from "team@slate.ws"
+  @reply_to "team@slate.ws"
 
   @doc """
   Deliver instructions to confirm account.
   """
   def deliver_confirmation_instructions(user, url) do
-    deliver(user.email, """
-
-    ==============================
-
-    Hi #{user.email},
-
-    You can confirm your account by visiting the url below:
-
-    #{url}
-
-    If you didn't create an account with us, please ignore this.
-
-    ==============================
-    """)
+    base_email()
+    |> to(user)
+    |> subject("Confirm Your Account")
+    |> assign(:user, user)
+    |> assign(:url, url)
+    |> render(:confirmation_instructions)
+    |> Mailer.deliver_now()
   end
 
   @doc """
   Deliver instructions to reset password account.
   """
   def deliver_reset_password_instructions(user, url) do
-    deliver(user.email, """
-
-    ==============================
-
-    Hi #{user.email},
-
-    You can reset your password by visiting the url below:
-
-    #{url}
-
-    If you didn't request this change, please ignore this.
-
-    ==============================
-    """)
+    base_email()
+    |> to(user)
+    |> subject("Reset Your Password")
+    |> assign(:user, user)
+    |> assign(:url, url)
+    |> render(:reset_password_instructions)
+    |> Mailer.deliver_now()
   end
 
   @doc """
   Deliver instructions to update your e-mail.
   """
   def deliver_update_email_instructions(user, url) do
-    deliver(user.email, """
+    base_email()
+    |> to(user)
+    |> subject("Confirm Email Address")
+    |> assign(:user, user)
+    |> assign(:url, url)
+    |> render(:update_email_instructions)
+    |> Mailer.deliver_now()
+  end
 
-    ==============================
-
-    Hi #{user.email},
-
-    You can change your e-mail by visiting the url below:
-
-    #{url}
-
-    If you didn't request this change, please ignore this.
-
-    ==============================
-    """)
+  defp base_email do
+    new_email()
+    |> from(@from)
+    |> put_header("Reply-To", @reply_to)
+    |> put_html_layout({SlateWeb.LayoutView, "email.html"})
   end
 end
