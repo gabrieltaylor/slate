@@ -1,0 +1,7 @@
+<p>Hi <%= @user.email %>,</p>
+
+<p>You can change your email by visiting the url below:</p>
+
+<p><a href="<%= @url %>">Update Email Address</a></p>
+
+<p>If you didn't request this change, please ignore this.</p>

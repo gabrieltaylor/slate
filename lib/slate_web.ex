@@ -31,7 +31,8 @@ defmodule SlateWeb do
     quote do
       use Phoenix.View,
         root: "lib/slate_web/templates",
-        namespace: SlateWeb
+        namespace: SlateWeb,
+        pattern: "**/*"
 
       # Import convenience functions from controllers
       import Phoenix.Controller,

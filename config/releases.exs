@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 database_url =
   System.get_env("DATABASE_URL") ||
@@ -8,7 +8,6 @@ database_url =
     """
 
 config :slate, Slate.Repo,
-  # ssl: true,
   url: database_url,
   pool_size: String.to_integer(System.get_env("POOL_SIZE") || "10")
 

@@ -4,7 +4,7 @@ defmodule Slate.MixProject do
   def project do
     [
       app: :slate,
-      version: "0.1.0",
+      version: "0.1.1",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -29,7 +29,6 @@ defmodule Slate.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:bcrypt_elixir, "~> 2.0"},
       # Phoenix
       {:phoenix, "~> 1.5.4"},
       {:phoenix_ecto, "~> 4.1"},
@@ -47,6 +46,10 @@ defmodule Slate.MixProject do
 
       # Auth
       {:phx_gen_auth, "~> 0.4.0", only: [:dev], runtime: false},
+      {:bcrypt_elixir, "~> 2.0"},
+
+      # Mailing
+      {:bamboo, "~> 1.5"},
 
       # Telemetry
       {:telemetry_metrics, "~> 0.4"},

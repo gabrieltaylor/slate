@@ -16,4 +16,8 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
+config :slate, Slate.Mailer,
+  adapter: Bamboo.LocalAdapter,
+  open_email_in_browser_url: "http://localhost:4000/sent_emails"
+
 import_config "#{Mix.env()}.exs"
