@@ -6,17 +6,7 @@ An Opinionated Elixir Phoenix App Template.
 
 ## Getting Started
 
-Clone this repo:
-
-```
-$ git clone git@github.com:devato/slate.git ./my_app
-```
-
-Then:
-
-```
-$ cd my_app
-```
+Clone this repo,
 
 Rename the app:
 
@@ -49,3 +39,10 @@ $ bin/lint
 ## Template Details
 
 TODO
+
+## Deploy to Render.com
+
+1. Make changes to `render.yaml` as needed.
+2. `mix phx.gen.secret` and copy the key
+3. Visit render.com, and go to YAML in the navigation.
+4. Enter the secret for staging/prod.
