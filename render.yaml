@@ -1,12 +1,13 @@
 services:
-  - type: web-staging
+  - type: web
     name: slate-staging
     env: elixir
     repo: https://github.com/devato/slate.git
     region: oregon
     plan: starter
     branch: develop
-    dockerCommand: ./rel/render-build.sh
+    buildCommand: ./rel/render-build.sh
+    startCommand: _build/prod/rel/slate/bin/slate start
     healthCheckPath: /
     envVars:
     - key: SECRET_KEY_BASE
