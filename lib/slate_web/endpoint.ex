@@ -1,6 +1,8 @@
 defmodule SlateWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :slate
 
+  plug PlugHeartbeat, path: "/health", json: true
+
   @session_options [
     store: :cookie,
     key: "_slate_key",

@@ -38,7 +38,10 @@ defmodule Slate.MixProject do
       {:phoenix_live_dashboard, "~> 0.2"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
+
+      # Plugs
       {:plug_cowboy, "~> 2.0"},
+      {:plug_heartbeat, "~> 1.0"},
 
       # Database
       {:ecto_sql, "~> 3.4"},

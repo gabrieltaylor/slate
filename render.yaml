@@ -11,7 +11,7 @@ services:
     branch: develop                                     # <-- update
     buildCommand: ./rel/render-build.sh
     startCommand: _build/prod/rel/slate/bin/slate start # <-- update
-    healthCheckPath: /
+    healthCheckPath: /health
     autoDeploy: false # false so we can deploy from actions
     envVars:
     - key: SECRET_KEY_BASE
