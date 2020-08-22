@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/devato/slate/tree/HEAD)
+## [0.1.3](https://github.com/devato/slate/tree/0.1.3) (2020-08-22)
 
-[Full Changelog](https://github.com/devato/slate/compare/0.1.2...HEAD)
+[Full Changelog](https://github.com/devato/slate/compare/0.1.2...0.1.3)
 
 **Closed issues:**
 
