@@ -47,7 +47,7 @@ jobs:
       - run: bin/lint
       - run: bin/test
 
-  staging:
+  deploy:
     runs-on: ubuntu-latest
     needs: check
     steps:
@@ -56,3 +56,4 @@ jobs:
         uses: joelwmale/webhook-action@master
         env:
           WEBHOOK_URL: ${{ secrets.STAGING_WEBHOOK_URL }}
+          data: "Trigger staging deployment"
