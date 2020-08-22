@@ -3,7 +3,7 @@
 cd "$(dirname "${BASH_SOURCE[0]}")/.."
 source ./bin/utils/functions.sh
 
-set -o errexit -o errtrace
+set -o errexit
 
 header "Compiling..."
 mix compile --warnings-as-errors --force

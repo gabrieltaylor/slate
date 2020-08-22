@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-set -o errexit -o errtrace
+set -o errexit
 
 cd "$(dirname "${BASH_SOURCE[0]}")/../assets"
 source ../bin/utils/functions.sh
