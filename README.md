@@ -2,9 +2,7 @@
 
 ![CI](https://github.com/devato/slate/workflows/CI/badge.svg)
 
-An Opinionated Elixir Phoenix App Template.
-
-[Maintained by Devato](https://devato.com)
+An Elixir Phoenix App Template we use @ [Devato](https://devato.com)
 
 
 ## Contents
