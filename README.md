@@ -1,5 +1,7 @@
 # Slate
 
+![CI](https://github.com/devato/slate/workflows/CI/badge.svg)
+
 An Opinionated Elixir Phoenix App Template.
 
 [Maintained by Devato](https://devato.com)
