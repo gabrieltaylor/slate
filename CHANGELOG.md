@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.2.0](https://github.com/devato/slate/tree/v0.2.0) (2020-08-23)
+
+[Full Changelog](https://github.com/devato/slate/compare/0.1.3...v0.2.0)
+
 ## [0.1.3](https://github.com/devato/slate/tree/0.1.3) (2020-08-22)
 
 [Full Changelog](https://github.com/devato/slate/compare/0.1.2...0.1.3)
