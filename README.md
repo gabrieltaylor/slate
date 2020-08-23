@@ -7,24 +7,44 @@ An Opinionated Elixir Phoenix App Template.
 [Maintained by Devato](https://devato.com)
 
 
-# Table of Contents
+## Contents
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Slate](#slate)
-  - [Getting Started](#getting-started)
-  - [Helper Scripts](#helper-scripts)
-  - [Template Details](#template-details)
-  - [Deploy to Render.com](#deploy-to-rendercom)
+
+- [Template Details](#template-details)
+- [Getting Started](#getting-started)
+- [Helper Scripts](#helper-scripts)
+- [Deploy to Render.com](#deploy-to-rendercom)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+## Template Details
+
+The app template comes with some common systems pre-configured, tested and ready to go.
+
+| Library                                                                             | Description                                                                              |
+| ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| [Phoenix Framework](https://www.phoenixframework.org/)                              | An Elixir web-framework that gives you peace of mind from development to production.     |
+| [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)           | Phoenix LiveView enables rich, real-time user experiences with server-rendered HTML.     |
+| [Phoenix LiveDashboard](https://github.com/phoenixframework/phoenix_live_dashboard) | LiveDashboard provides real-time performance monitoring and debugging tools for Phoenix. |
+| [Ecto](https://github.com/elixir-ecto/ecto)                                         | A toolkit for data mapping and language integrated query for Elixir.                     |
+| [phx_gen_auth](https://github.com/aaronrenner/phx_gen_auth)                         | An authentication system generator for Phoenix 1.5+ applications.                        |
+| [Oban](https://github.com/sorentwo/oban)                                            | Robust job processing in Elixir, backed by modern PostgreSQL.                            |
+| [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)                                    | Unit testing framework for Elixir.                                                       |
+| [ExMachina](https://github.com/thoughtbot/ex_machina)                               | ExMachina makes it easy to create test data and associations.                            |
+| [Faker](https://github.com/elixirs/faker)                                           | Faker is a pure Elixir library for generating fake data.                                 |
+| [ExCoveralls](https://github.com/parroty/excoveralls)                               | An Elixir library that reports test coverage statistics.                                 |
+| [Bamboo](https://github.com/thoughtbot/bamboo)                                      | Flexible and easy to use email for Elixir.                                               |
+| [Credo](https://github.com/rrrene/credo)                                            | A static code analysis tool for the Elixir language.                                     |
+| [TailwindCSS](https://tailwindcss.com/)                                             | A utility-first CSS framework for rapidly building custom designs.                       |
+
 ## Getting Started
 
-Clone this repo,
+Fork or clone this repo:  [Generate Fork](https://github.com/devato/slate/generate)
 
-Rename the app:
+Then, rename the app:
 
 ```
 $ bin/rename MyApp (PascalCase)
@@ -51,10 +71,6 @@ Lint Assets:
 ```
 $ bin/lint
 ```
-
-## Template Details
-
-TODO
 
 ## Deploy to Render.com
 
