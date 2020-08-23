@@ -47,13 +47,14 @@ jobs:
       - run: bin/lint
       - run: bin/test
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: check
-    steps:
-      - name: Deploy Staging
-        if: github.ref == 'refs/heads/develop'
-        uses: joelwmale/webhook-action@master
-        env:
-          WEBHOOK_URL: ${{ secrets.STAGING_WEBHOOK_URL }}
-          data: "Trigger staging deployment"
+  # NOTE: Enable to deploy to render on successful check
+  # deploy:
+  #   runs-on: ubuntu-latest
+  #   needs: check
+  #   steps:
+  #     - name: Deploy Staging
+  #       if: github.ref == 'refs/heads/develop'
+  #       uses: joelwmale/webhook-action@master
+  #       env:
+  #         WEBHOOK_URL: ${{ secrets.STAGING_WEBHOOK_URL }}
+  #         data: "Trigger staging deployment"
