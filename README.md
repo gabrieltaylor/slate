@@ -54,6 +54,16 @@ $ bin/rename MyApp (PascalCase)
 
 This will re-write all modules and files to match your app.
 
+**Optional**
+
+Remove git repo to clean the Slate:
+
+```
+$ rm -rf .git
+$ git init
+$ git remote add origin <your-repo>
+```
+
 ## Helper Scripts
 
 Setup the application:
