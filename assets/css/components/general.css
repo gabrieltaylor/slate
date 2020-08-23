@@ -1,6 +1,6 @@
-h1 {
-  @apply text-gray-700 text-2xl;
-}
+h1 { @apply text-gray-700 text-2xl font-bold; }
+h2 { @apply text-gray-700 text-xl font-bold; }
+h3 { @apply text-gray-700 text-lg font-bold; }
 
 .bold-link {
   @apply inline-block align-baseline font-bold text-sm text-blue-500;
