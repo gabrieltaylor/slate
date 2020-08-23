@@ -24,6 +24,8 @@ An Opinionated Elixir Phoenix App Template.
 
 The app template comes with some common systems pre-configured, tested and ready to go.
 
+Includes a Github Actions workflow that will run checks and optionally deploy on success.
+
 | Library                                                                             | Description                                                                              |
 | ----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
 | [Phoenix Framework](https://www.phoenixframework.org/)                              | An Elixir web-framework that gives you peace of mind from development to production.     |
@@ -72,13 +74,16 @@ Lint Assets:
 $ bin/lint
 ```
 
-## Deploy to Render.com
+## Deploy
 
 First determine which branch you'd like to use for `staging` / `prod`.
 
-Then follow these steps:
+1. Customize `render.yaml` as needed.
+2. Visit render.com, go to YAML in the navigation and hit "New From YAML"
+3. From here you can enter your secret key base etc.
 
-1. Make changes to `render.yaml` as needed.
-2. `mix phx.gen.secret` and copy the key
-3. Visit render.com, and go to YAML in the navigation.
-4. Enter the secret for staging/prod.
+## Contributing
+
+If you have some ideas on how to improve this template, feel free to create an issue or PR.
+
+[Fork this Repo](https://github.com/devato/slate/generate)
