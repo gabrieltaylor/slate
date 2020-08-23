@@ -32,7 +32,6 @@ defmodule SlateWeb.Users.RegistrationControllerTest do
       # Now do a logged in request and assert on the menu
       conn = get(conn, "/")
       response = html_response(conn, 200)
-      assert response =~ email
       assert response =~ "Settings</a>"
       assert response =~ "Log out</a>"
     end
@@ -44,7 +43,7 @@ defmodule SlateWeb.Users.RegistrationControllerTest do
         })
 
       response = html_response(conn, 200)
-      assert response =~ "<h1>Register</h1>"
+      assert response =~ "Register</h1>"
       assert response =~ "must have the @ sign and no spaces"
       assert response =~ "should be at least 6 character"
     end
