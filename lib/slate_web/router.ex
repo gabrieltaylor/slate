@@ -20,7 +20,8 @@ defmodule SlateWeb.Router do
   scope "/", SlateWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    get "/", PageController, :home
+    live "/live-page", PageLive, :home_live
   end
 
   # Other scopes may use custom stacks.
