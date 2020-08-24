@@ -57,6 +57,8 @@ defmodule Slate.MixProject do
       # Auth
       {:phx_gen_auth, "~> 0.4.0", only: [:dev], runtime: false},
       {:bcrypt_elixir, "~> 2.0"},
+      {:ueberauth, "~> 0.6"},
+      {:ueberauth_google, "~> 0.8"},
 
       # Mailing
       {:bamboo, "~> 1.5"},
