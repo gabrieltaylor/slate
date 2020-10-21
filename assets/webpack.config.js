@@ -12,7 +12,9 @@ module.exports = (_, options) => {
   return {
     optimization: {
       minimizer: [
-        new TerserPlugin({cache: true, parallel: true, sourceMap: devMode}),
+        new TerserPlugin({
+          parallel: true,
+        }),
         new OptimizeCSSAssetsPlugin({}),
       ],
     },
