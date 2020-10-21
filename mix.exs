@@ -4,7 +4,7 @@ defmodule Slate.MixProject do
   def project do
     [
       app: :slate,
-      version: "0.2.1",
+      version: "0.3.0",
       elixir: "~> 1.7",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
@@ -37,55 +37,54 @@ defmodule Slate.MixProject do
   defp deps do
     [
       # Phoenix
-      {:phoenix, "~> 1.5.4"},
-      {:phoenix_ecto, "~> 4.1"},
-      {:phoenix_live_view, "~> 0.13.0"},
-      {:phoenix_html, "~> 2.11"},
+      {:phoenix, "~> 1.5.6"},
+      {:phoenix_ecto, "~> 4.2.1"},
+      {:phoenix_live_view, "~> 0.14.7"},
+      {:phoenix_html, "~> 2.14"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_dashboard, "~> 0.2"},
-      {:gettext, "~> 0.11"},
-      {:jason, "~> 1.0"},
+      {:phoenix_live_dashboard, "0.3.2"},
+      {:gettext, "~> 0.18.2"},
+      {:jason, "~> 1.2"},
 
       # Plugs
-      {:plug_cowboy, "~> 2.0"},
+      {:plug_cowboy, "~> 2.4"},
       {:plug_heartbeat, "~> 1.0"},
 
       # Database
-      {:ecto_sql, "~> 3.4"},
-      {:postgrex, ">= 0.0.0"},
+      {:ecto_sql, "~> 3.5"},
+      {:postgrex, "~> 0.15.7"},
 
       # Auth
-      {:phx_gen_auth, "~> 0.4.0", only: [:dev], runtime: false},
-      {:bcrypt_elixir, "~> 2.0"},
+      {:phx_gen_auth, "~> 0.5.0", only: [:dev], runtime: false},
+      {:bcrypt_elixir, "~> 2.2"},
 
       # Mailing
-      {:bamboo, "~> 1.5"},
+      {:bamboo, "~> 1.6"},
 
       # Background Work
-      {:oban, "~> 2.1"},
+      {:oban, "~> 2.2"},
 
       # Telemetry
-      {:telemetry_metrics, "~> 0.4"},
-      {:telemetry_poller, "~> 0.4"},
+      {:telemetry_metrics, "~> 0.6.0"},
+      {:telemetry_poller, "~> 0.5.1"},
 
       # Testing
-      {:floki, ">= 0.0.0", only: :test},
-      {:mix_test_watch, "~> 1.0", only: :dev, runtime: false},
+      {:floki, "~> 0.29.0", only: [:test]},
 
       # Linting
       {:credo, "~> 1.4", only: [:dev, :test], override: true},
       {:credo_envvar, "~> 0.1", only: [:dev, :test], runtime: false},
-      {:credo_naming, "~> 0.4", only: [:dev, :test], runtime: false},
+      {:credo_naming, "~> 1.0", only: [:dev, :test], runtime: false},
 
       # Test factories
-      {:ex_machina, "~> 2.3", only: :test},
-      {:faker, "~> 0.12", only: :test},
+      {:ex_machina, "~> 2.4", only: :test},
+      {:faker, "~> 0.16", only: :test},
 
       # Test coverage
-      {:excoveralls, "~> 0.11", only: :test},
+      {:excoveralls, "~> 0.13", only: :test},
 
       # Convenience
-      {:shorter_maps, "~> 2.0"}
+      {:shorter_maps, "~> 2.2"}
     ]
   end
 
