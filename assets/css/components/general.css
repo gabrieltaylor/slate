@@ -26,6 +26,6 @@ h3 { @apply text-gray-700 text-lg font-bold; }
     @apply bg-blue-700;
   }
   &:focus {
-    @apply outline-none shadow-outline;
+    @apply outline-none shadow-xl;
   }
 }
